@@ -11,7 +11,7 @@ void IRAM_ATTR button_isr1() {
   button_counter2++;
 }
 
-void setup5() {
+void setup() {
   pinMode(BUTTON_IN, INPUT_PULLUP);
   Serial.begin(115200);
 
@@ -19,7 +19,7 @@ void setup5() {
   attachInterrupt(digitalPinToInterrupt(BUTTON_IN), button_isr1, FALLING);
 }
 
-void loop5() {
+void loop() {
   if (button_counter2 != last_count1) {
     last_count1 = button_counter2;
     Serial.print("Button Pressed! Count: ");
